@@ -16,7 +16,7 @@
       <ul class="space-y-2 text-sm">
         <li><a href="/" class="hover:text-blue-400 transition">Inicio</a></li>
         <li><a href={Astro.url.pathname === "/" ? "#servicios" : "/#servicios"} class="hover:text-blue-400 transition">Servicios</a></li>
-        <li><a href="/contacto" class="hover:text-blue-400 transition">Contacto</a></li>
+        <!-- <li><a href="/contacto" class="hover:text-blue-400 transition">Contacto</a></li> -->
       </ul>
     </div>
 
@@ -26,6 +26,18 @@
       <ul class="space-y-2 text-sm">
         <li>
           <a
+            href="mailto:airesderosario.service@gmail.com"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center gap-2 hover:text-red-400 transition"
+          >
+            <span>
+              <img src="/mail-icon.png" alt="whatsApp" class="w-5 h-5 rounded-full inline-block" />  
+            </span> airesderosario.service@gmail.com
+          </a>
+        </li>
+        <li>
+          <a
             href="https://www.instagram.com/aires.delrosario"
             target="_blank"
             rel="noopener"
@@ -33,7 +45,7 @@
           >
             <span>
               <img src="/instagram-icon.png" alt="instagram" class="w-5 h-5 rounded-full inline-block" />  
-            </span> Instagram
+            </span> @aires.delrosario
           </a>
         </li>
         <li>
