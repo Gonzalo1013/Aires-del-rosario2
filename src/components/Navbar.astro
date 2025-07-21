@@ -1,0 +1,76 @@
+---
+// No necesitas script aquí si el toggle lo manejamos con Alpine o JS más adelante
+---
+<nav class=" bg-[rgb(31, 29, 48)]  shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20 items-center">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" >
+            <img class="size-40 logo-navbar" src="/Aires del Rosario.png" alt="logo Aires del Rosario - instalaciones" />
+        </a>
+      </div>
+
+      <!-- Botón hamburguesa (móvil) -->
+      <div class="md:hidden">
+        <button
+          id="menu-button"
+          class="text-gray-200 focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <svg
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menú normal (escondido en móvil) -->
+      <div class="hidden md:flex space-x-6">
+        <a href="/" class="text-gray-100 hover:text-blue-600 text-2xl ">Inicio</a>
+        <a href={Astro.url.pathname === "/" ? "#servicios" : "/#servicios"} class="text-gray-100 hover:text-blue-600 text-2xl ">Servicios</a>
+        <a href="/nosotros" class="text-gray-100 hover:text-blue-600 text-2xl ">Nosotros</a>
+        <a href="/contacto" class="text-gray-100 hover:text-blue-600 text-2xl ">Contacto</a>
+        <a href="/faq" class="text-gray-100 hover:text-blue-600 text-2xl ">FAQ</a>
+      </div>
+    </div>
+
+    <!-- Menú desplegable (móvil) -->
+    <div id="mobile-menu" class="md:hidden space-y-2 mt-4 flex justify-between">
+      <a href="/" class="text-gray-100 hover:text-blue-600">Inicio</a>
+      <a href={Astro.url.pathname === "/" ? "#servicios" : "/#servicios"} class="text-gray-100 hover:text-blue-600">Servicios</a>
+      <a href="/nosotros" class="text-gray-100 hover:text-blue-600">Nosotros</a>
+      <a href="/contacto" class="text-gray-100 hover:text-blue-600">Contacto</a>
+      <a href="/faq" class="text-gray-100 hover:text-blue-600 ">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Script básico para toggle -->
+  <script type="module">
+    const button = document.getElementById('menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    button?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+    });
+  </script>
+</nav>
+
+
+<style>
+  img.logo-navbar {
+  filter: drop-shadow(0 0 16px white );
+  width: 220px;
+}
+</style>
+
